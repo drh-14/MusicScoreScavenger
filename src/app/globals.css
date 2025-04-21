@@ -18,9 +18,12 @@
     --foreground: #ededed;
   }
 }
+a{
+  color:rgb(0, 132, 255);
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: white;
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
