@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import {Button} from '@mui/material';
-import { useState } from 'react';
 export default function ScoreItem(props: {title:string, composer:string, link: string}){
     return(
         <div className = 'flex flex-col gap-8 p-4 border-2 border-solid border-black w-full break-all'>
