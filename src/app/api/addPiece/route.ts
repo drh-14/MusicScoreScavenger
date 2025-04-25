@@ -1,9 +1,0 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-export default async function POST(req: NextRequest){
-    const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!);
-    const {userID, title, composer, link} = await req.json();
-    const { error } = await supabaseClient.from("pieces").insert({userID: userID, title: title, composer: composer, link: link});
-    return NextResponse.json(error ? error.code : "success");
-}
