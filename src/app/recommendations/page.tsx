@@ -15,14 +15,12 @@ export default function Recommendations(){
         if(recommendedPieces){
             setPieces(JSON.parse(recommendedPieces));
         }
-        console.log(localStorage.getItem("recommended"));
     }, []);
 
     return(
         <div className = ' flex flex-col gap-8 items-center mb-8'>
             <Navbar></Navbar>
-            <div className = 'text-5xl'>Your Recommended Pieces</div>
-            <div className = 'flex flex-col items-center gap-4 w-fit pr-8 h-150 overflow-auto'>
+            <div className = 'flex flex-col items-center gap-4 w-fit pr-8 h-180 overflow-auto'>
                 {pieces.map(piece => <ScoreItem key = {piece.link} title = {piece.title} composer = {piece.composer} link = {piece.link}></ScoreItem> )}
             </div>
             <Button onClick = {() => router.push('/questionnaire')} variant = 'contained'>Recommend More Pieces</Button>
