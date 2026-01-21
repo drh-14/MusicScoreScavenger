@@ -2,7 +2,6 @@
 import { Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import Navbar from '@/components/Navbar'
 export default function Questionnaire() {
     const [composers, setComposers] = useState("");
     const [instruments, setInstruments] = useState("");
@@ -28,13 +27,14 @@ export default function Questionnaire() {
         }
     }
     return (
-        <div className='flex flex-col gap-8 items-center'>
-            <Navbar></Navbar>
+        <div className='flex flex-col gap-16 items-center mt-24'>
+            <div className = 'flex flex-col gap-8 items-center w-full'>
             <input onChange = {(e) => setComposers(e.target.value)} placeholder="Preferred composers" className='w-1/4 border-black border-2 rounded-md p-4'></input>
             <input onChange = {(e) => setInstruments(e.target.value)} placeholder="Preferred instruments" className='w-1/4 border-black border-2 rounded-md p-4'></input>
             <input onChange = {(e) => setCharacteristics(e.target.value)} placeholder="Preferred characteristics of pieces" className='w-1/4 border-black border-2 rounded-md p-4'></input>
             <input className='w-1/4 border-black border-2 rounded-md p-4' onChange = {(e) => setPrevPieces(e.target.value)} placeholder = "Previous Pieces Played"></input>
             <input className='w-1/4 border-black border-2 rounded-md p-4' onChange = {(e) => setNumPieces(e.target.value)} placeholder = "Number of Pieces to Recommend"></input>
+            </div>
             <Button onClick={getRecommendations} variant='contained'>Recommend Pieces</Button>
         </div>
     )
