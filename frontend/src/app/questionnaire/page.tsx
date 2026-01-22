@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@mui/material';
+import CustomButton from '@/components/customButton';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 export default function Questionnaire() {
@@ -35,7 +35,7 @@ export default function Questionnaire() {
             <input className='w-1/4 border-black border-2 rounded-md p-4' onChange = {(e) => setPrevPieces(e.target.value)} placeholder = "Previous Pieces Played"></input>
             <input className='w-1/4 border-black border-2 rounded-md p-4' onChange = {(e) => setNumPieces(e.target.value)} placeholder = "Number of Pieces to Recommend"></input>
             </div>
-            <Button onClick={getRecommendations} variant='contained'>Recommend Pieces</Button>
+            <CustomButton variant = "outlined" onClick={getRecommendations}>Recommend Pieces</CustomButton>
         </div>
     )
 }

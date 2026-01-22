@@ -1,4 +1,5 @@
 import CustomButton from "./customButton";
+import Link from 'next/link';
 
 type BannerProps = {
     loggedIn: boolean
@@ -11,8 +12,8 @@ export default function Banner(props: BannerProps){
         <div className ='inline float-right'>
           <div className = 'flex gap-8 w-full bg-sky-400 pr-2'>
             {!props.loggedIn ? <div className = 'flex gap-8'>
-                <CustomButton variant = "contained">Log In</CustomButton>
-                <CustomButton variant = "contained">Sign Up</CustomButton>
+                <Link href = "/login"><CustomButton variant = "contained">Log In</CustomButton></Link>
+                <Link href = "/signup"><CustomButton  variant = "contained">Sign Up</CustomButton></Link>
             </div>: 
             <div></div>}
           </div>

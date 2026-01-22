@@ -2,8 +2,9 @@
 import Banner from '@/components/banner';
 import CustomButton from '@/components/customButton';
 
-import Link from 'next/link';
+import {useRouter} from 'next/navigation';
 export default function Home() {
+  const  router = useRouter();
  
   return (
     <div className='flex flex-col items-center gap-40 font-sans'>
@@ -12,7 +13,7 @@ export default function Home() {
         <h1 className = 'text-5xl'>Your key to finding new classical pieces.</h1>
         <div className='text-3xl'>Find new pieces tailored to your preferences.</div>
       </div>
-      <Link href = '/questionnaire'><CustomButton variant = "outlined">Get Started</CustomButton></Link>
+      <CustomButton onClick = {() => router.push("/questionnaire")} variant = "outlined">Get Started</CustomButton>
     </div>
   );
 }
