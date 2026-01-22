@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider} from "@mui/material/styles"
 import { OverridableStringUnion } from "@mui/types"
 import { MouseEventHandler } from "react";
 
-export default function CustomButton(props: {children: string, variant: OverridableStringUnion<"text" | "outlined" | "contained">, onClick? : MouseEventHandler<HTMLButtonElement>})
+export default function CustomButton(props: {children?: string, variant: OverridableStringUnion<"text" | "outlined" | "contained">, onClick? : MouseEventHandler<HTMLButtonElement>})
 {
      const theme = createTheme({
       palette: {

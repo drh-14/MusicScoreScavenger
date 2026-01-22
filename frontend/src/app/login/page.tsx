@@ -10,7 +10,7 @@ export default function Login() {
                 <input className='w-3/4 p-4' placeholder="Password"></input>
             </div>
             <CustomButton variant="contained">Login</CustomButton>
-            <Link href="/forgot">Forgot username or password?</Link>
+            <Link href="/forgot-credentials">Forgot username or password?</Link>
         </div>
     )
 }
